@@ -8,7 +8,7 @@
 
 body {
     background: #077d7f;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     background-size: auto 100vh;
     height: 100vh;
 }
@@ -62,7 +62,7 @@ header {
 }
 
 a {
-    color: black;
+    color: #101819;
     text-decoration: none;
     
 }
@@ -79,13 +79,63 @@ a:hover {
 
 .site-title {
     font-size: 4em;
+    font-family: 'Fira Code', monospace;
 }
 
 .site-subtitle {
+    line-height: 1.8em;
     font-style: italic;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.portifolio {
+    color: #101819;
+    background-color: #4F797E;
+    padding: 2em;
+    height: 100vh;
+}
+
+.portifolio h2 {
+    font-family: 'Fira Sans', sans-serif;
+    margin-bottom: 1.5em;
+    font-size: 1.62em;
+}
+
+.portifolio .grid {
+    display: grid;
+    gap: 1em;
+}
+
+@media (min-width: 560px) {
+    .portifolio .grid {
+        grid-template-columns: 240px 240px;
+    }
+}
+
+@media (min-width: 880px) {
+    .portifolio .grid {
+        grid-template-columns: repeat(3, 260px);
+        justify-content: center;
+        align-content: center;
+        height: calc(100vh - 4em - 48px - 1.5em);
+    }
+}
+
+.portifolio figure {
+    text-align: center;
 }
 
 .img-portfolio {
-    height: 180px;
-    width: 180px;
+    height: 240px;
+    width: 240px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30%;
 }
+
+/* @media (min-width: 1200px) {
+    .img-portfolio {
+        height: auto;
+        width: 100%;
+    }
+} */
