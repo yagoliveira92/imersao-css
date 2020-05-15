@@ -45,6 +45,7 @@ header {
     position: fixed;
     top: 0;
     width: 100vw;
+    z-index: 1;
 }
 
 .menu ul {
@@ -59,6 +60,14 @@ header {
 .menu a {
     display: block;
     padding: 10px 20px;
+    transition: background-color 1s, color 1s;
+}
+
+.menu a:active,
+.menu a:hover {
+    background-color: #131513;
+    color: #FBF5E6;
+    text-decoration: none ;
 }
 
 a {
@@ -69,6 +78,20 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+.titulo {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+
+    animation: linear 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }   
 }
 
 .site-subtitle,
@@ -88,13 +111,15 @@ a:hover {
     font-family: 'Fira Sans', sans-serif;
 }
 
+.contato,
 .portifolio {
     color: #101819;
     background-color: #4F797E;
     padding: 2em;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+.contato h2,
 .portifolio h2 {
     font-family: 'Fira Sans', sans-serif;
     margin-bottom: 1.5em;
@@ -131,11 +156,26 @@ a:hover {
     object-fit: cover;
     object-position: center;
     border-radius: 30%;
+    transition: transform 500ms;
 }
 
-/* @media (min-width: 1200px) {
-    .img-portfolio {
-        height: auto;
-        width: 100%;
-    }
-} */
+.img-portfolio:hover {
+    transform: scale(1.2);
+}
+
+.contato .icons{
+    text-align: center;
+
+}
+
+.contato a {
+    color: whitesmoke;
+    font-size: 4em;
+    transition: text-shadow 500ms;
+}
+
+.contato a:active,
+.contato a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
